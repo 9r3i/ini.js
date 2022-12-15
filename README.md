@@ -28,7 +28,9 @@ single="this is \"single\" line with quotes"
 
 var parsed=(new ini).parse(str);
 console.log(parsed);
-`
+```
+
+
 # Sample build
 
 ```js
