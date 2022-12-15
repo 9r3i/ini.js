@@ -9,3 +9,41 @@
 
 # ini.js
 Parse and build string of ini format
+
+
+# Sample parse with multi-line value
+
+```js
+var str=`
+[section]
+key=value
+another_key=another value
+
+[another_section]
+miltiline="this is value
+of the milti-line ini format
+and this is another line"
+single="this is \"single\" line with quotes"
+`;
+
+var parsed=(new ini).parse(str);
+console.log(parsed);
+`
+# Sample build
+
+```js
+var obj={
+  section: {
+    key: "value",
+    another_key: "another value"
+  }
+};
+var withSection=(new ini).build(obj,true),
+withoutSection=(new ini).build(obj.section);
+console.log(withSection,withoutSection);
+```
+
+
+# Closing
+That's all there is to it.
+Alhamdulillaah...
